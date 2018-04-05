@@ -22,7 +22,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT (FIPS_RASPBERRYPI OR FIPS
         fips_dir(glfw/src GROUP .)
         fips_files(
             internal.h
-            context.c init.c input.c monitor.c vulkan.c window.c
+            context.c init.c input.c monitor.c vulkan.c window.c window_ext.c
         )
         if (FIPS_MACOS)
             add_definitions(-DFIPS_GLFW_MACOS=1)
@@ -38,7 +38,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT (FIPS_RASPBERRYPI OR FIPS
             fips_files(
                 win32_platform.h win32_joystick.h
                 win32_init.c win32_monitor.c win32_time.c
-                win32_tls.c win32_window.c win32_joystick.c
+                win32_tls.c win32_window.c win32_window_ext.c win32_joystick.c
                 wgl_context.h wgl_context.c
                 egl_context.h egl_context.c
             )
@@ -48,7 +48,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT (FIPS_RASPBERRYPI OR FIPS
             fips_files(
                 x11_platform.h xkb_unicode.h linux_joystick.h
                 posix_time.h posix_tls.h
-                x11_init.c x11_monitor.c x11_window.c
+                x11_init.c x11_monitor.c x11_window.c x11_window_ext.c
                 xkb_unicode.c linux_joystick.c posix_time.c posix_tls.c
                 glx_context.h glx_context.c
                 egl_context.h egl_context.c
